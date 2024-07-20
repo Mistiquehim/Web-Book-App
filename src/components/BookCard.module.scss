@@ -1,0 +1,73 @@
+@use "../styles/mixins.scss" as mixin;
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 25px;
+    max-height: 82%;
+    position: relative;
+
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    img {
+        width: 150px;
+        height: 240px;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 10px 0 10px;
+
+        img {
+            // background: url(../assets/fallbackImage.png);
+            background-size: cover;
+        }
+    }
+
+    .fav {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    .edit {
+        background: mixin.$btn-primary;
+        color: mixin.$text-white;
+        margin-right: 10px;
+
+        &:hover {
+            background: mixin.$btn-primary-hover;
+        }
+    }
+
+    .delete {
+        background: mixin.$btn-warning;
+        color: mixin.$text-white;
+
+        &:hover {
+            background: mixin.$btn-warning-hover;
+        }
+    }
+
+    .actionBtn {
+        display: flex;
+        justify-content: right;
+        margin-top: 10px;
+    }
+}

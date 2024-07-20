@@ -1,0 +1,42 @@
+@use "../styles/mixins.scss" as mixin;
+
+.formInp {
+    padding: 5% 40%;
+
+    p {
+        margin-bottom: 12px;
+    }
+
+    .date {
+        input {
+            width: auto;
+        }
+    }
+
+    label {
+        font-weight: 600;
+    }
+
+    input,
+    textarea {
+        margin-top: 5px;
+        height: 30px;
+        font-size: 16px;
+        border: 1px solid mixin.$light-grey;
+        border-radius: 4px;
+        width: 300px;
+    }
+
+    .saveButton {
+        background: mixin.$btn-sucess;
+        color: mixin.$text-white;
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 10px;
+
+        &:hover {
+            background: mixin.$btn-sucess-hover;
+            color: mixin.$text-white;
+        }
+    }
+}

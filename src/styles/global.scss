@@ -1,0 +1,59 @@
+@use "../styles/mixins.scss" as mixin;
+@import './variables';
+@import './mixins';
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: mixin.$theme-primary;
+}
+
+.addBtn {
+  color: mixin.$text-white;
+  background: none;
+  border: 2px solid;
+  font-weight: 600;
+}
+
+.closeBtn {
+  cursor: pointer;
+  font-size: 24px;
+
+  &:hover {
+    color: mixin.$text-white;
+  }
+}
+
+.inputField, .textareaField {
+  margin-bottom: 15px;
+}
+
+.error {
+  font-size: 12px;
+  color: mixin.$color-red;
+}

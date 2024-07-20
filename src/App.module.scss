@@ -1,0 +1,32 @@
+@use "./styles/mixins.scss" as mixin;
+
+.app {
+    height: 100vh;
+    position: relative;
+
+    .header {
+        position: fixed;
+        width: 100%;
+        background: mixin.$theme-primary;
+        text-align: center;
+        z-index: 1;
+        top: 0;
+        padding: 20px;
+        font-size: 38px;
+        font-weight: 600;
+        color: mixin.$text-white;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    top: 84px;
+    padding: 20px;
+
+    .formContainer {
+        padding: 20px;
+        width: 500px;
+    }
+}

@@ -1,0 +1,24 @@
+@use "../styles/mixins.scss" as mixin;
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    button {
+        font-size: 16px;
+        margin-right: 10px;
+        cursor: pointer;
+        padding: 5px 10px;
+        border: 1px solid mixin.$light-grey;
+        border-radius: 4px;
+
+        &:active, &:focus {
+            border: 1px solid mixin.$dark-grey;
+            background: darkgrey;
+            color: mixin.$text-white;
+        }
+    }
+
+
+}
