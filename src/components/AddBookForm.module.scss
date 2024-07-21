@@ -28,14 +28,14 @@
     }
 
     .saveButton {
-        background: mixin.$btn-sucess;
+        background: mixin.$color-sucess;
         color: mixin.$text-white;
         padding: 10px;
         font-size: 16px;
         margin-top: 10px;
 
         &:hover {
-            background: mixin.$btn-sucess-hover;
+            background: mixin.$color-sucess-hover;
             color: mixin.$text-white;
         }
     }

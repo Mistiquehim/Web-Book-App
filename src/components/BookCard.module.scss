@@ -23,7 +23,6 @@
         padding: 10px 0 10px;
 
         img {
-            // background: url(../assets/fallbackImage.png);
             background-size: cover;
         }
     }
@@ -47,21 +46,21 @@
     }
 
     .edit {
-        background: mixin.$btn-primary;
+        background: mixin.$color-primary;
         color: mixin.$text-white;
         margin-right: 10px;
 
         &:hover {
-            background: mixin.$btn-primary-hover;
+            background: mixin.$color-primary-hover;
         }
     }
 
     .delete {
-        background: mixin.$btn-warning;
+        background: mixin.$color-warning;
         color: mixin.$text-white;
 
         &:hover {
-            background: mixin.$btn-warning-hover;
+            background: mixin.$color-warning-hover;
         }
     }
 

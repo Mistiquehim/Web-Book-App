@@ -16,7 +16,6 @@ const EditBookPage = () => {
 
   const handleEditBook = (e: React.MouseEvent<HTMLButtonElement>, updatedBook: Book) => {
     editBook(e, updatedBook);
-    // navigate('/');
   };
 
   return (

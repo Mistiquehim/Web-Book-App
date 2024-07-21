@@ -1,5 +1,4 @@
 @use "../styles/mixins.scss" as mixin;
-@import './variables';
 @import './mixins';
 
 body {
@@ -56,4 +55,8 @@ h6 {
 .error {
   font-size: 12px;
   color: mixin.$color-red;
+}
+
+.mainContainer {
+  min-height: 100vh;
 }

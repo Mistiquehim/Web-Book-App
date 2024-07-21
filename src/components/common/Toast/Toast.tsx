@@ -1,24 +1,21 @@
-import React, { useEffect } from 'react';
-import './ToastStyles.css';
+import styles from './Toast.module.scss';
 
-interface ToastProps {
+type ToastProps = {
     message: string;
-    type: 'success' | 'error' | 'info' | 'warning';
-    duration?: number; // duration in milliseconds
+    duration?: number;
     onClose: () => void;
 }
 
-const Toast = ({ message, type, duration = 3000, onClose }: ToastProps): JSX.Element => {
-    useEffect(() => {
-        const timer = setTimeout(onClose, duration);
-        return () => clearTimeout(timer);
-    }, [duration, onClose]);
+const Toast = (props: ToastProps) => {
+
+    const { message } = props;
 
     return (
-        <div className={`toast ${type}`}>
-            <p>{message}</p>
+        <div className={`${styles.toast}`}>
+            {message}
         </div>
     );
 };
 
 export default Toast;
+

@@ -34,7 +34,6 @@ const BookCard = (props: BookCardProps) => {
             <button className={styles.fav} onClick={(e: React.MouseEvent<HTMLButtonElement>) => onToggleFavorite(e, book.id)}>
                 {isFavorite ? '❤️' : '🖤'}
             </button>
-            {/* <Favourite isFavorite={isFavorite} onToggleFavorite={(e: React.MouseEvent<HTMLButtonElement>) => onToggleFavorite(e, book.id)} book={book} /> */}
             {book.isLocal && (
                 <div className={styles.actionBtn}>
                     <button className={`${styles.edit} button`} onClick={(e: React.MouseEvent<HTMLButtonElement>) => onEditBook(e, book)}>Edit</button>

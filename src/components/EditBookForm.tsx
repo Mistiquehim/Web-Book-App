@@ -6,7 +6,6 @@ import Textarea from './common/Form/Textarea';
 import Button from './common/Form/Button';
 import { useNavigate } from 'react-router-dom';
 
-
 type EditBookFormProps = {
   book: Book;
   onEditBook: (e: React.MouseEvent<HTMLButtonElement>, book: Book) => void;

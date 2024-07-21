@@ -33,7 +33,7 @@ const BookListPage = () => {
   };
 
   return (
-    <div>
+    <div className='mainContainer'>
       <Header heading="Book List" closeButton={false} addButton={true} />
       <BookList
         books={paginatedBooks}
