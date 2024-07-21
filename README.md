@@ -1,30 +1,85 @@
-# React + TypeScript + Vite
+# Web Book App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web application to manage a list of books, including viewing book details, adding, editing, and deleting books, and managing favorite books. The app uses React.js with TypeScript and SCSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **View Books**: Display a paginated list of books fetched from a mock API.
+- **Book Details**: View detailed information about each book.
+- **Add/Edit/Delete Books**: Manage books locally with the ability to add, edit, and delete.
+- **Favorite Books**: Add or remove books from favorites, with persistence across sessions.
+- **Toasts**: Display notifications for book additions and removals.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React.js**: Frontend library for building the user interface.
+- **TypeScript**: For type safety and better development experience.
+- **SCSS**: For styling the application with modular CSS.
+- **React Hook Form**: For managing form state and validation.
+- **React Router**: For routing and navigation.
+- **Local Storage**: To persist favorite books and locally stored books.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Prerequisites
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Node.js (>= 14.x)
+- npm or yarn
+
+### Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/yourusername/web-book-app.git
+   cd web-book-app
+
+2. Install Dependencies
+
+    npm install (I used this)
+    # or
+    yarn install
+
+3. Start the Development Server
+
+    npm run dev
+    # or
+    yarn run dev
+
+  This will start the application on http://localhost:3000.
+
+Usage
+
+View Book List: Navigate to the home page to see the list of books.
+Book Details: Click on a book to view its details.
+Add Book: Go to the Add Book page to add a new book.
+Edit Book: Click on a book and use the edit feature to modify book details.
+Delete Book: Use the delete button to remove a book from the list.
+Manage Favorites: Click the heart icon to add or remove books from your favorites.
+
+API Endpoints
+
+List Books
+GET https://my-json-server.typicode.com/cutamar/mock/books
+
+Book Details
+GET https://my-json-server.typicode.com/cutamar/mock/books/{id}
+
+Folder Structure
+
+src/
+components/: Reusable UI components.
+hooks/: Custom hooks for application logic.
+pages/: Page components for routing.
+types/: TypeScript types and interfaces.
+App.tsx: Main application component with routing.
+index.tsx: Entry point of the React application.
+styles/: SCSS files for styling.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgements
+Inspired by Upler-Brains are Live
+
+Author(Developer): Jyoti Maurya
