@@ -34,21 +34,21 @@ A simple web application to manage a list of books, including viewing book detai
    git clone https://github.com/yourusername/web-book-app.git
    cd web-book-app
 
-2. Install Dependencies
+2. **Install Dependencies**
 
     npm install (I used this)
-    # or
+    or
     yarn install
 
-3. Start the Development Server
+3. **Start the Development Server**
 
     npm run dev
-    # or
+    or
     yarn run dev
 
   This will start the application on http://localhost:3000.
 
-Usage
+## Usage
 
 View Book List: Navigate to the home page to see the list of books.
 Book Details: Click on a book to view its details.
@@ -57,15 +57,15 @@ Edit Book: Click on a book and use the edit feature to modify book details.
 Delete Book: Use the delete button to remove a book from the list.
 Manage Favorites: Click the heart icon to add or remove books from your favorites.
 
-API Endpoints
+## API Endpoints
 
-List Books
+### List Books
 GET https://my-json-server.typicode.com/cutamar/mock/books
 
-Book Details
+### Book Details
 GET https://my-json-server.typicode.com/cutamar/mock/books/{id}
 
-Folder Structure
+### Folder Structure
 
 src/
 components/: Reusable UI components.
@@ -76,10 +76,7 @@ App.tsx: Main application component with routing.
 index.tsx: Entry point of the React application.
 styles/: SCSS files for styling.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgements
+### Acknowledgements
 Inspired by Upler-Brains are Live
 
-Author(Developer): Jyoti Maurya
+### Author(Developer): Jyoti Maurya
