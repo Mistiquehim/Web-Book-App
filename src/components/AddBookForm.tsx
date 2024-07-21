@@ -23,13 +23,12 @@ const AddBookForm = (props: AddBookFormProps) => {
 
   const { register, handleSubmit, reset, formState: { isSubmitting, errors } } = useForm<BookFormValues>();
 
-  const onSubmit: SubmitHandler<BookFormValues> = async (data) => {
+  const onSubmit: SubmitHandler<BookFormValues> = (data) => {
     const newBook: Book = {
       id: Date.now(), // Generate a unique ID for the book
       isLocal: true, // Indicate that this book is locally added
       ...data
     };
-    await new Promise(resolve => setTimeout(resolve, 2000));
     onAddBook(newBook);
     reset();
   };
