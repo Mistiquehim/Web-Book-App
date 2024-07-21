@@ -1,6 +1,6 @@
 import useBooks from '../hooks/useBooks';
 import AddBookForm from '../components/AddBookForm';
-import Header from '../components/Header';
+import Header from '../components/common/Header';
 
 const AddBookPage = () => {
   const { addBook } = useBooks();

@@ -1,6 +1,6 @@
 import styles from './BookDetails.module.scss';
 import { Book } from '../types/book';
-import Header from './Header';
+import Header from './common/Header';
 
 type BookDetailsProps = {
     book: Book;

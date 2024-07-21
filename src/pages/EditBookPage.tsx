@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import useBooks from '../hooks/useBooks';
 import EditBookForm from '../components/EditBookForm';
 import { Book } from '../types/book';
-import Header from '../components/Header';
+import Header from '../components/common/Header';
 
 const EditBookPage = () => {
   const { id } = useParams<{ id: string }>();

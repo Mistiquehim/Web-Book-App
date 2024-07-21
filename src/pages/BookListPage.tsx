@@ -4,7 +4,7 @@ import useBooks from '../hooks/useBooks';
 import BookList from '../components/BookList';
 import Pagination from '../components/Pagination';
 import { Book } from '../types/book';
-import Header from '../components/Header';
+import Header from '../components/common/Header';
 
 const BookListPage = () => {
   const { books, localBooks, favorites, toggleFavorite, deleteBook } = useBooks();
