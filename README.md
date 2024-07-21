@@ -36,7 +36,7 @@ A simple web application to manage a list of books, including viewing book detai
 
 2. **Install Dependencies**
 
-    npm install (I used this)
+    npm install
     or
     yarn install
 
