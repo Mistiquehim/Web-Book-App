@@ -13,6 +13,7 @@ const BookDetails = (props: BookDetailsProps) => {
 
     const { book } = props;
 
+    // Function to handle the image error and set fallback image 
     const handleError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
         event.currentTarget.src = fallbackImageUrl;
     };

@@ -18,6 +18,7 @@ const BookCard = (props: BookCardProps) => {
 
     const { book, isFavorite, onToggleFavorite, onBookClick, onEditBook, onDeleteBook } = props;
 
+    // Function to handle the image error and set fallback image 
     const handleError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
         event.currentTarget.src = fallbackImageUrl;
     };

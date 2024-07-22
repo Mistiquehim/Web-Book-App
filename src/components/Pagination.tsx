@@ -7,7 +7,10 @@ type PaginationProps = {
 }
 
 const Pagination = (props: PaginationProps) => {
+  
   const { totalPages, currentPage, onPageChange } = props;
+
+  // Create an array of page numbers based on the total number of pages
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
