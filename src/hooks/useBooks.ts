@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'; 
+import { useState, useEffect, useCallback } from 'react';
 import { Book } from '../types/book';
 import { useToast } from '../components/common/Toast/ToastManager';
 
@@ -16,7 +16,7 @@ const useBooks = () => {
     const storedLocalBooks = localStorage.getItem('localBooks');
     return storedLocalBooks ? JSON.parse(storedLocalBooks) : [];
   });
-  
+
   // State for storing favorite books IDs from local storage
   const [favorites, setFavorites] = useState<number[]>(() => {
     const storedFavorites = localStorage.getItem('favorites');
@@ -26,9 +26,15 @@ const useBooks = () => {
   // Fetch books from the API on component mount
   useEffect(() => {
     fetch('https://my-json-server.typicode.com/cutamar/mock/books')
-      .then(response => response.json())
-      .then(data => setBooks(data));
-  }, []);
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch books');
+        }
+        return response.json();
+      })
+      .then(data => setBooks(data))
+      .catch(error => addToast(`Error fetching books: ${error.message}`));
+  }, [addToast]);
 
   // Update local storage whenever localBooks state changes
   useEffect(() => {
@@ -43,9 +49,12 @@ const useBooks = () => {
   // Add a new book to the localBooks state and show a toast notification
   const addBook = useCallback(
     (book: Book) => {
+      if (!book.title || !book.author) {
+        addToast('Book title and author are required');
+        return;
+      }
       setLocalBooks(prevBooks => [...prevBooks, book]);
-      const message = 'Book is added';
-      addToast(message);
+      addToast('Book is added');
     },
     [setLocalBooks, addToast]
   );
@@ -54,11 +63,14 @@ const useBooks = () => {
   const editBook = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>, updatedBook: Book) => {
       e.stopPropagation();
+      if (!updatedBook.title || !updatedBook.author) {
+        addToast('Book title and author are required');
+        return;
+      }
       setLocalBooks(prevBooks =>
         prevBooks.map(book => (book.id === updatedBook.id ? updatedBook : book))
       );
-      const message = 'Book is edited';
-      addToast(message);
+      addToast('Book is edited');
     },
     [setLocalBooks, addToast]
   );
@@ -68,22 +80,23 @@ const useBooks = () => {
     (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
       e.stopPropagation();
       setLocalBooks(prevBooks => prevBooks.filter(book => book.id !== id));
-      const message = 'Book is deleted';
-      addToast(message);
+      addToast('Book is deleted');
     },
     [setLocalBooks, addToast]
   );
 
   // Toggle a book as favorite/unfavorite and show a toast notification
-  const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-    e.stopPropagation();
-    setFavorites(prev =>
-      prev.includes(id) ? prev.filter(favId => favId !== id) : [...prev, id]
-    );
-    const isFavorite = favorites.includes(id);
-    const message = isFavorite ? 'Removed from favorites' : 'Added to favorites';
-    addToast(message);
-  };
+  const toggleFavorite = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
+      e.stopPropagation();
+      setFavorites(prev =>
+        prev.includes(id) ? prev.filter(favId => favId !== id) : [...prev, id]
+      );
+      const isFavorite = favorites.includes(id);
+      addToast(isFavorite ? 'Removed from favorites' : 'Added to favorites');
+    },
+    [favorites, addToast]
+  );
 
   // Return the necessary states and functions
   return { books, localBooks, favorites, toggleFavorite, addBook, editBook, deleteBook };
