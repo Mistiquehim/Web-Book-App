@@ -1,5 +1,7 @@
 import styles from './BookCard.module.scss';
 import { Book } from '../types/book';
+import ActionButton from './ActionButton';
+import FavouriteButton from './FavouriteButton';
 
 type BookCardProps = {
     book: Book;
@@ -31,15 +33,8 @@ const BookCard = (props: BookCardProps) => {
                 </div>
             </div>
             <p className={styles.text}>{book.description}</p>
-            <button className={styles.fav} onClick={(e: React.MouseEvent<HTMLButtonElement>) => onToggleFavorite(e, book.id)}>
-                {isFavorite ? '❤️' : '🖤'}
-            </button>
-            {book.isLocal && (
-                <div className={styles.actionBtn}>
-                    <button className={`${styles.edit} button`} onClick={(e: React.MouseEvent<HTMLButtonElement>) => onEditBook(e, book)}>Edit</button>
-                    <button className={`${styles.delete} button`} onClick={(e: React.MouseEvent<HTMLButtonElement>) => onDeleteBook(e, book.id)}>Delete</button>
-                </div>
-            )}
+            <FavouriteButton book={book} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
+            {book.isLocal && ( <ActionButton book={book} onEditBook={onEditBook} onDeleteBook={onDeleteBook} />)}
         </div>
     );
 };
