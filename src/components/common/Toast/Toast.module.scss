@@ -4,12 +4,16 @@
     padding: 10px 20px;
     border-radius: 5px;
     animation: fadeInOut 3s forwards;
-    width: 300px;
+    width: auto;
     color: mixin.$text-white;
     position: absolute;
     background-color: mixin.$theme-primary;
     top: 90%;
     left: 70%;
+
+    @media (max-width: 768px) {
+        left: 40%
+    }
 }
 
 @keyframes fadeInOut {

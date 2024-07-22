@@ -48,7 +48,8 @@ h6 {
   }
 }
 
-.inputField, .textareaField {
+.inputField,
+.textareaField {
   margin-bottom: 15px;
 }
 
@@ -59,4 +60,14 @@ h6 {
 
 .mainContainer {
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    width: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0rem;
+    width: auto;
+  }
 }

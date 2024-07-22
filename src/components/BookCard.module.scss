@@ -38,6 +38,10 @@
 
     .info {
         font-size: 14px;
+
+        @media (max-width: 480px) {
+            padding-left: 10px;
+        }
     }
 
     .text {

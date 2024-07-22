@@ -3,6 +3,14 @@
 .formInp {
     padding: 5% 40%;
 
+    @media (max-width: 768px) {
+        padding: 60px 13%;
+    }
+
+    @media (max-width: 480px) {
+        padding: 60px 10%;
+    }
+
     p {
         margin-bottom: 12px;
     }
